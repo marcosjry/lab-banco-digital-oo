@@ -21,7 +21,6 @@ public class Banco {
 				System.out.println("Conta com o nome "+ nome +" removida.");
 			}
 		}
-		
 	}
 
 	public String getNome() {
@@ -30,10 +29,6 @@ public class Banco {
 
 	public List<Conta> getContas() {
 		return contas;
-	}
-
-	public void exibeConta() {
-		System.out.println(contas);
 	}
 
 	public void setContas(List<Conta> contas) {
