@@ -95,7 +95,7 @@ public class Main {
 		} while (loop);
 
 		scanner.close();
-
+		listaClientes.RemoverClienteConta("Marcos");
 		//Imprimindo as contas criadas pelo usuário
 		listaClientes.getContas().forEach(conta -> conta.imprimirInfosComuns());
 		

@@ -14,8 +14,14 @@ public class Banco {
 		contas.add(e);
 	}
 
-	public void RemoverClienteConta(Conta e) {
-		contas.add(e);
+	public void RemoverClienteConta(String nome) {
+		for(Conta conta: contas) {
+			if(conta.cliente.getNome().equalsIgnoreCase(nome)) {
+				contas.remove(conta);
+				System.out.println("Conta com o nome "+ nome +" removida.");
+			}
+		}
+		
 	}
 
 	public String getNome() {
