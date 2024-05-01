@@ -1,8 +1,9 @@
+import interfaces.IConta;
 
 public abstract class Conta implements IConta {
 	
 	private static final int AGENCIA_PADRAO = 1;
-	private static int SEQUENCIAL = 1;
+	private static int SEQUENCIAL = 0;
 
 	protected int agencia;
 	protected int numero;
@@ -17,12 +18,22 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void sacar(double valor) {
-		saldo -= valor;
+		if(saldo < valor) {
+			throw new IllegalArgumentException("Valor de saque é maior que o saldo disponível.");
+		}
+		else {
+			saldo -= valor;
+		}
 	}
 
 	@Override
 	public void depositar(double valor) {
-		saldo += valor;
+		if(valor < 0) {
+			throw new IllegalArgumentException("Valor de depósito inválido");
+		}
+		else {
+			saldo = saldo + valor;
+		}
 	}
 
 	@Override
